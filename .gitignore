@@ -102,3 +102,9 @@ dist
 
 # TernJS port file
 .tern-port
+
+# composer files
+/vendor
+
+# docker file
+/docker-compose.yaml
