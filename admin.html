@@ -7,13 +7,13 @@
     </head>
     <body>
         <div class="card card-white center" style="width: 500px;height: 500px; margin-top: 100px; text-align: center;">
-            <form>
+            <form action="login.php" method="post">
                 <img src="./user.png" height="200px">
-                <input class="input-id" placeholder="USERNAME" style="margin-top: 30px;">
-                <input class="input-password" type="password" placeholder="PASSWORD" style="margin-top: 25px;">
-                <button class="buttom-login" style="margin-top: 25px;">LOGIN</button>
+                <input class="input-id" placeholder="USERNAME" style="margin-top: 30px;" type="text" name="username">
+                <input class="input-password" type="password" placeholder="PASSWORD" style="margin-top: 25px;" type="text" name="password">
+                <button class="buttom-login" style="margin-top: 25px;" type="submit">LOGIN</button>
                 <a style="margin-top: 15px; color: gray; float: right;" href="forgot-password">Forgot password?</a>
-                <input type="checkbox" style="margin-top: 15px; float: left;">
+                <input type="checkbox" style="margin-top: 15px; float: left;" type="text" name="checkbox">
                 <label style="color: gray; float: left; margin-top: 13px; margin-left: 5px;">stay connected</label>
             </form>
         </div>
