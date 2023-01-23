@@ -1,0 +1,39 @@
+version: "3"
+
+services:
+  web:
+    container_name: "eduardo_web"
+    image: php:apache-buster
+    ports:
+      - "80:80"
+    volumes:
+      - .:/var/www/html
+    tty: true
+    stdin_open: true
+    depends_on:
+      - database
+    networks:
+      eduardo_networks_backend_ip_fix_6:
+        ipv4_address: 192.168.1.101
+
+  database:
+    image: mariadb:10.2.25-bionic
+    container_name: "eduardo_mariadb"
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./images-docker/idcommerce/develop/docker_server/mariadb/data:/var/lib/mysql
+    environment:
+      MYSQL_USER: root
+      MYSQL_ROOT_PASSWORD: 123
+    command: mysqld --sql_mode="NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION" --ft_min_word_len=2 --ft_stopword_file=' '
+    networks:
+      eduardo_networks_backend_ip_fix_6:
+        ipv4_address: 192.168.1.100
+
+networks:
+  eduardo_networks_backend_ip_fix_6:
+    ipam:
+      driver: default
+      config:
+      - subnet: "192.168.1.0/24"

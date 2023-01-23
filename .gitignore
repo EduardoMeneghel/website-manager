@@ -105,6 +105,3 @@ dist
 
 # composer files
 /vendor
-
-# docker file
-/docker-compose.yaml
