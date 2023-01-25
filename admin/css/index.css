@@ -17,6 +17,37 @@ p{
     font-weight: 900;
 }
 
-.search{
-    
-}
+
+.search {
+    width: 40%;
+    position: relative;
+    display: flex;
+  }
+  
+  .searchTerm {
+    width: 100%;
+    border: 1px solid rgb(81, 0, 255);
+    border-right: none;
+    padding: 5px;
+    height: 20px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9DBFAF;
+  }
+  
+  .searchTerm:focus{
+    color: rgb(81, 0, 255);
+  }
+  
+  .searchButton {
+    width: 40px;
+    height: 32px;
+    border: 1px solid rgb(81, 0, 255);
+    background: rgb(81, 0, 255);
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
