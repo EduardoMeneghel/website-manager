@@ -1,7 +1,7 @@
 <?php
 require_once './vendor/autoload.php';
 
-$loader = new \Twig\Loader\FilesystemLoader('view');
+$loader = new \Twig\Loader\FilesystemLoader('public/view');
 $twig = new \Twig\Environment($loader);
 
 $data = [];
