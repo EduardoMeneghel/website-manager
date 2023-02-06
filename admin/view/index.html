@@ -6,30 +6,10 @@
         <link href="./css/index.css" rel="stylesheet">
     </head>
     <body>
-        <header class="header">
-            <nav>
-                <ul>
-                    <li><a href="./home.php">Home</a></li>
-                    <li class="dropdown">
-                        <a class="dropbtn">Dropdown</a>
-                        <div class="dropdown-content">
-                          <a href="#">Link 1</a>
-                          <a href="#">Link 2</a>
-                          <a href="#">Link 3</a>
-                        </div>
-                      </li>
-                    <li><a href="./config.php">Config</a></li>
-                    <div class="search" style="margin-top: 7px; margin-left: 7px;">
-                        <input type="text" class="searchTerm" placeholder="What are you looking for?">
-                        <button type="submit" class="searchButton">
-                        <img src="https://cdn-icons-png.flaticon.com/512/25/25313.png" style="width:25px; filter: invert(1)">
-                    </button>
-                    </div>
-                </ul>
-            </nav>
-        </header>
+        {{ include('header.html') }}
         <main>
            <p>home</p>
         </main>
+        {{ include('footer.html') }}
     </body>
 </html>
