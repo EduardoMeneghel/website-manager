@@ -1,6 +1,7 @@
 {
     "require": {
-        "twig/twig": "^3.0"
+        "twig/twig": "^3.0",
+        "cviebrock/eloquent-sluggable": "^9.0"
     },
     "name": "gmaccario/simple-mvc-php-framework",
     "description": "Simple MVC PHP framework: a demonstration of how to create a simple MVC framework in PHP",
