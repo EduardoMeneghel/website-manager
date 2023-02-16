@@ -126,7 +126,7 @@ li:hover>.nav-hover {
     margin-top: 100px;
 }
 
-.input-id{
+.input{
     width: calc(100% - 20px);
     height: 50px;
     background-color: gainsboro;

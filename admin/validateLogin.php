@@ -1,9 +1,10 @@
 <?php
 require_once('../app/models/QueryManager.php');
 $queryManager = new QueryManager;
-$row = $queryManager->executeQuery('SELECT * FROM user WHERE login = '.'"'.$_POST["username"].'"');
+//TODO fazer validadções e colocar campos obrigatorios no front
+$row = $queryManager->executeQuery('SELECT * FROM user WHERE nm_username = '.'"'.$_POST["username"].'"');
 if($_POST["username"] && $_POST["password"]){
-    if($_POST["username"] == $row['login'] && $_POST["password"] == $row['password']) {
+    if($_POST["username"] == $row['nm_username'] && $_POST["password"] == $row['ds_password']) {
         header("Location: /website-manager/admin/home.php");
         die();
     }else{
