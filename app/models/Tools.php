@@ -1,8 +1,9 @@
 <?php
+namespace app\models;
 
-class Calculator {
+class Tools {
 
-    public function add($a, $b) {
+    public function calculator($a, $b) {
         return $a + $b;
     }
 
