@@ -1,7 +1,7 @@
 <?php
 
 $servername = "eduardo_mariadb";
-$dbname = "database";
+$dbname = "web";
 $username = "root";
 $password = "123";
 try {

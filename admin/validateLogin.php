@@ -1,5 +1,7 @@
 <?php
-require_once('../app/models/QueryManager.php');
+require_once '../vendor/autoload.php';
+use App\Models\QueryManager;
+
 $queryManager = new QueryManager;
 //TODO fazer validadções e colocar campos obrigatorios no front
 $row = $queryManager->executeQuery('SELECT * FROM user WHERE nm_username = '.'"'.$_POST["username"].'"');

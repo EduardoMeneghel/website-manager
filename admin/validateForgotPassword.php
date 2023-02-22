@@ -1,5 +1,7 @@
 <?php
-require_once('../app/models/QueryManager.php');
+require_once '../vendor/autoload.php';
+use App\Models\QueryManager;
+
 $queryManager = new QueryManager;
 $row = $queryManager->executeQuery('SELECT * FROM user WHERE ds_email = '.'"'.$_POST["email"].'"');
 if($row){

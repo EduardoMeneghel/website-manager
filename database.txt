@@ -10,3 +10,9 @@ CREATE TABLE web.user (
   `ds_password` VARCHAR(100) NOT NULL,
   PRIMARY KEY  (`id`)
 );
+CREATE TABLE `menu_admin` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `nm_name` VARCHAR(50) NOT NULL,
+  `ds_url` VARCHAR(100) NOT NULL,
+  PRIMARY KEY  (`id`)
+);
