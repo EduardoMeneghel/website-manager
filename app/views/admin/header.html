@@ -1,19 +1,24 @@
 <header class="header">
     <nav>
         <ul>
-            <li><a href="./home.php">Home</a></li>
-            <li class="dropdown">
-                 <!--
-                    Colocar config
-                -->
-                <a class="dropbtn">Dropdown</a>
-                <div class="dropdown-content">
-                  <a href="#">Link 1</a>
-                  <a href="#">Link 2</a>
-                  <a href="#">Link 3</a>
-                </div>
-              </li>
-            <li><a href="./config.php">Config</a></li>
+           
+            {% for menu in menu_admin %}
+                {% if menu.ds_url %}
+                    <li><a href="/{{menu.ds_url}}">{{menu.nm_name}}</a></li>
+                {% else %}
+                    <li class="dropdown">
+                        <a class="dropbtn">{{menu.nm_name}}</a>
+                        <div class="dropdown-content">
+                        {% for cheldren in menu %}
+                            <div class="dropdown-content">
+                                <a href="/{{cheldren.ds_url}}">{{cheldren.nm_name}}</a>
+                            </div>
+                        {% endfor %}
+                        </div>
+                    </li>
+                {% endif %}
+            {% endfor %}
+            
             <div class="search" style="margin-top: 7px; margin-left: 7px;">
                 <input type="text" class="searchTerm" placeholder="What are you looking for?">
                 <button type="submit" class="searchButton">

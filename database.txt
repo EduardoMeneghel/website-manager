@@ -1,5 +1,6 @@
 CREATE DATABASE web;
-CREATE TABLE web.user (
+
+CREATE TABLE `user` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `nm_username` VARCHAR(50) NOT NULL,
   `nm_full_name` VARCHAR(100) NOT NULL,
@@ -10,9 +11,29 @@ CREATE TABLE web.user (
   `ds_password` VARCHAR(100) NOT NULL,
   PRIMARY KEY  (`id`)
 );
+
 CREATE TABLE `menu_admin` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `nm_name` VARCHAR(50) NOT NULL,
   `ds_url` VARCHAR(100) NOT NULL,
+  `ds_ordination` INT(11),
   PRIMARY KEY  (`id`)
 );
+
+CREATE TABLE `menu_admin_itens` (
+    `id` INT(11) NOT NULL AUTO_INCREMENT,
+    `id_menu_admin` INT(11) NOT NULL,
+    `nm_name` VARCHAR(50) NOT NULL,
+  	`ds_url` VARCHAR(100) NOT NULL,
+  	`ds_ordination` INT(11),
+     PRIMARY KEY (`id`),
+     FOREIGN KEY (`id_menu_admin`) REFERENCES `menu_admin` (`id`)
+);
+
+INSERT INTO menu_admin
+(id, nm_name, ds_url, ds_ordination)
+VALUES(1, 'Home', 'home.php', 1);
+
+INSERT INTO menu_admin
+(id, nm_name, ds_url, ds_ordination)
+VALUES(2, 'Config', '', 99);

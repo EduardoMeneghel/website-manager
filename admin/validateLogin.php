@@ -5,8 +5,9 @@ use App\Models\QueryManager;
 $queryManager = new QueryManager;
 //TODO fazer validadções e colocar campos obrigatorios no front
 $row = $queryManager->executeQuery('SELECT * FROM user WHERE nm_username = '.'"'.$_POST["username"].'"');
+
 if($_POST["username"] && $_POST["password"]){
-    if($_POST["username"] == $row['nm_username'] && $_POST["password"] == $row['ds_password']) {
+    if($_POST["username"] == reset($row)['nm_username'] && $_POST["password"] == reset($row)['ds_password']) {
         header("Location: /website-manager/admin/home.php");
         die();
     }else{

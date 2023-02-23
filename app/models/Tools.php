@@ -8,4 +8,10 @@ class Tools {
         return $a + $b;
     }
 
+    function ddd($data){
+        echo '<pre>';
+        die(var_dump($data));
+        echo '</pre>';
+    }
+
 }
