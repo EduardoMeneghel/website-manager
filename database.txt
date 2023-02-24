@@ -21,19 +21,23 @@ CREATE TABLE `menu_admin` (
 );
 
 CREATE TABLE `menu_admin_itens` (
-    `id` INT(11) NOT NULL AUTO_INCREMENT,
+    `id_child` INT(11) NOT NULL AUTO_INCREMENT,
     `id_menu_admin` INT(11) NOT NULL,
-    `nm_name` VARCHAR(50) NOT NULL,
-  	`ds_url` VARCHAR(100) NOT NULL,
-  	`ds_ordination` INT(11),
-     PRIMARY KEY (`id`),
+    `nm_name_child` VARCHAR(50) NOT NULL,
+  	`ds_url_child` VARCHAR(100) NOT NULL,
+  	`ds_ordination_child` INT(11),
+     PRIMARY KEY (`id_child`),
      FOREIGN KEY (`id_menu_admin`) REFERENCES `menu_admin` (`id`)
 );
 
 INSERT INTO menu_admin
-(id, nm_name, ds_url, ds_ordination)
-VALUES(1, 'Home', 'home.php', 1);
+(nm_name, ds_url, ds_ordination)
+VALUES('Home', 'home.php', 1);
 
 INSERT INTO menu_admin
-(id, nm_name, ds_url, ds_ordination)
-VALUES(2, 'Config', '', 99);
+(nm_name, ds_url, ds_ordination)
+VALUES('Config', '', 99);
+
+INSERT INTO menu_admin_itens
+(id_menu_admin, nm_name_child, ds_url_child, ds_ordination_child)
+VALUES(2, 'Menu Admin', 'menu_admin', 99);

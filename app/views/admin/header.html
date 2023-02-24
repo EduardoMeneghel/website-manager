@@ -1,20 +1,21 @@
 <header class="header">
     <nav>
         <ul>
-           
             {% for menu in menu_admin %}
                 {% if menu.ds_url %}
-                    <li><a href="/{{menu.ds_url}}">{{menu.nm_name}}</a></li>
+                    <li><a href="./{{menu.ds_url}}">{{menu.nm_name}}</a></li>
                 {% else %}
                     <li class="dropdown">
                         <a class="dropbtn">{{menu.nm_name}}</a>
-                        <div class="dropdown-content">
-                        {% for cheldren in menu %}
+                        <!--Está vindo como json e não cai no for-->
+                        {% set children = menu.children %}
+                        {% for child in children %}
                             <div class="dropdown-content">
-                                <a href="/{{cheldren.ds_url}}">{{cheldren.nm_name}}</a>
+                                <div class="dropdown-content">
+                                    <a href="./{{child.ds_url_child}}">{{child.nm_name_child}}</a>
+                                </div>
                             </div>
                         {% endfor %}
-                        </div>
                     </li>
                 {% endif %}
             {% endfor %}
