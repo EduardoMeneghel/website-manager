@@ -1,4 +1,4 @@
-import { Calculator } from '../public/js/calculator';
+import { Calculator } from '../public/js/tools';
 import { describe, beforeEach, it, expect } from '@jest/globals';
 
   describe('Calculator', () => {
