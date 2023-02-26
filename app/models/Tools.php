@@ -4,14 +4,15 @@ namespace App\Models;
 
 class Tools {
 
-    public function calculator($a, $b) {
+    public function calculator($a, $b) :int {
         return $a + $b;
     }
 
-    function ddd($data){
+    public function ddd($data) :string {
         echo '<pre>';
         die(var_dump($data));
         echo '</pre>';
     }
 
 }
+?>

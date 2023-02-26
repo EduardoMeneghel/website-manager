@@ -8,11 +8,10 @@
                     <li class="dropdown">
                         <a class="dropbtn">{{menu.nm_name}}</a>
                         <!--Está vindo como json e não cai no for-->
-                        {% set children = menu.children %}
-                        {% for child in children %}
+                        {% for children in menu.children %}
                             <div class="dropdown-content">
                                 <div class="dropdown-content">
-                                    <a href="./{{child.ds_url_child}}">{{child.nm_name_child}}</a>
+                                    <a href="./{{children.ds_url_child}}">{{children.nm_name_child}}</a>
                                 </div>
                             </div>
                         {% endfor %}
